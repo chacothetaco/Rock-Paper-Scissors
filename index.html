@@ -8,8 +8,32 @@
     <script>
         //defines the array
         const rockPaperScissors = ['Rock', 'Paper', 'Scissors'];
-        //creates a variable from a function that randomly chooses an item from the above array
-        let getComputerChoice = rockPaperScissors[Math.floor(Math.random() * rockPaperScissors.length)];
+        //creates a function that randomly chooses an item from the above array and displays it in the console
+        function getComputerChoice() {
+            console.log(rockPaperScissors[Math.floor(Math.random() * rockPaperScissors.length)]);
+        } 
+        //invokes the function getComputerChoice()
+        getComputerChoice();
+
+        //Write a function that takes the user input (Rock, Paper, or Scissors) and compares to the randomized computer choice (Rock, Paper, pr Scissors). The results and string output could be as follows:
+
+        //If computer= rock & user=rock, then "It's a tie. Try again."
+        //If computer= rock & user= scissors, then "You lose! Rock beats scissors"
+        //If computer = rock & user = paper, then "You win! Paper beats rock"
+        //If computer = paper & user = rock, then "You lose! Paper beats rock"
+        //if computer = paper & user = paper, then "It's a tie. Try again."
+        //if computer = paper & user = scissors, then "You win! Scissors beat paper."
+        //if computer = scissors & user = rock, then "You win! Rock beats scissors."
+        //If computer = scissors & user = paper, then "You lose! Scissors beats paper."
+        //If computer = scissors & user = scissors, then "It's a tie. Try again."
         
+        function playRound(playerSelection, computerSelection) {
+
+        }
+
+        const playerSelection = "rock";
+        const computerselection = getComputerChoicce();
+        console.log(playround(playerSelection, computerSelection));
+
     </script>
 </body>
