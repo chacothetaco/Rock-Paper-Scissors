@@ -10,30 +10,50 @@
         const rockPaperScissors = ['Rock', 'Paper', 'Scissors'];
         //creates a function that randomly chooses an item from the above array and displays it in the console
         function getComputerChoice() {
-            console.log(rockPaperScissors[Math.floor(Math.random() * rockPaperScissors.length)]);
+            return rockPaperScissors[Math.floor(Math.random() * rockPaperScissors.length)];
         } 
         //invokes the function getComputerChoice()
-        getComputerChoice();
+        //getComputerChoice();
 
         //Write a function that takes the user input (Rock, Paper, or Scissors) and compares to the randomized computer choice (Rock, Paper, pr Scissors). The results and string output could be as follows:
 
-        //If computer= rock & user=rock, then "It's a tie. Try again."
+        //If computer= rock & user=rock, then "It's a tie. Try again." Combine this with other tie results in if else statement.
         //If computer= rock & user= scissors, then "You lose! Rock beats scissors"
         //If computer = rock & user = paper, then "You win! Paper beats rock"
         //If computer = paper & user = rock, then "You lose! Paper beats rock"
-        //if computer = paper & user = paper, then "It's a tie. Try again."
+        //if computer = paper & user = paper, then "It's a tie. Try again." Combine this with other tie results in if else statement.
         //if computer = paper & user = scissors, then "You win! Scissors beat paper."
         //if computer = scissors & user = rock, then "You win! Rock beats scissors."
         //If computer = scissors & user = paper, then "You lose! Scissors beats paper."
-        //If computer = scissors & user = scissors, then "It's a tie. Try again."
-        
-        function playRound(playerSelection, computerSelection) {
+        //If computer = scissors & user = scissors, then "It's a tie. Try again." Combine this with other tie results in if else statement.
 
+        function playRound(playerSelection, computerSelection) {
+            let playerSelectionLower = playerSelection.toLowerCase();
+            let computerSelectionLower = computerSelection.toLowerCase();
+            console.log(playerSelection);
+            console.log(computerSelection);
+            if (playerSelectionLower == computerSelectionLower) {
+                return "It's a tie!";
+            } else if (computerSelectionLower == "rock" && playerSelectionLower == "scissors") {
+                return "You lose! Rock beats scissors.";
+            } else if (computerSelectionLower == "rock" && playerSelectionLower == "paper") {
+                return "You win! Paper beats rock.";
+            } else if (computerSelectionLower == "paper" && playerSelectionLower == "rock") {
+                return "You lose! Paper beats rock";
+            } else if (computerSelectionLower == "paper" && playerSelectionLower == "scissors") {
+                return "You win! Scissors beats paper.";
+            } else if (computerSelectionLower == "scissors" && playerSelectionLower == "rock") {
+                return "You win! Rock beats scissors.";
+            } else if (computerSelectionLower == "scissors" && playerSelectionLower == "paper") {
+                return "You lose. Scissors beats paper.";
+            } else {
+                return "Incorrect selection. User must input 'Rock', 'Paper', or 'Scissors'.";
+            }
         }
 
         const playerSelection = "rock";
-        const computerselection = getComputerChoicce();
-        console.log(playround(playerSelection, computerSelection));
+        const computerSelection = getComputerChoice();
+        console.log(playRound(playerSelection, computerSelection));
 
     </script>
 </body>
