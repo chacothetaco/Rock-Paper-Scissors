@@ -6,6 +6,10 @@
 </head>
 <body>
     <script>
+        
+        let playerScore = 0;
+        let computerScore = 0;
+
         //defines the array
         const rockPaperScissors = ['Rock', 'Paper', 'Scissors'];
         //creates a function that randomly chooses an item from the above array and displays it in the console
@@ -14,16 +18,6 @@
         } 
 
         //Write a function that takes the user input (Rock, Paper, or Scissors) and compares to the randomized computer choice (Rock, Paper, pr Scissors). The results and string output could be as follows:
-
-        //If computer= rock & user=rock, then "It's a tie. Try again." Combine this with other tie results in if else statement.
-        //If computer= rock & user= scissors, then "You lose! Rock beats scissors"
-        //If computer = rock & user = paper, then "You win! Paper beats rock"
-        //If computer = paper & user = rock, then "You lose! Paper beats rock"
-        //if computer = paper & user = paper, then "It's a tie. Try again." Combine this with other tie results in if else statement.
-        //if computer = paper & user = scissors, then "You win! Scissors beat paper."
-        //if computer = scissors & user = rock, then "You win! Rock beats scissors."
-        //If computer = scissors & user = paper, then "You lose! Scissors beats paper."
-        //If computer = scissors & user = scissors, then "It's a tie. Try again." Combine this with other tie results in if else statement.
 
         function playRound(playerSelection, computerSelection) {
             let playerSelectionLower = playerSelection.toLowerCase();
@@ -49,22 +43,34 @@
             }
         }
 
-        const playerSelection = "rock";
-        const computerSelection = getComputerChoice();
-        console.log(playRound(playerSelection, computerSelection));
-
         //Create a new function called game() that calls the playRound function
         function game() {
-
+            // create loop that plays 5 rounds of playRound and keeps score
+            for (let i = 0; i < 5; i++) {
+                const computerSelection = getComputerChoice();
+                //creates window prompt for each loop iteration for the player to make their choice
+                const playerSelection = prompt("Rock, Paper, or Scissors?");
+                console.log(playRound(playerSelection, computerSelection)); //successfully runs 5 rounds with random computer choice each round
+                //create function or variable that determines score based off of result
+                // log score of each round
+                //add score from previous round to total score
+                // create a function that returns "Winner" if player wins >= 3 rounds or "Loser" if player wins <= 2 rounds
+            }
+            //if else statement to determine points. should go in for loop eventually
+            if (playerSelection === computerSelection) {
+                return 0;
+            } else if ((playerSelection === "rock" && computerSelection === "scissors") || 
+                       (playerSelection === "paper" && computerSelection === "rock") || 
+                       (playerSelection === "scissors" && computerSelection === "paper")) {
+                return 1;
+            } else {
+                return 2;
+            }
         }
 
-        // create loop that plays 5 rounds of playRound and keeps score
-        for (let i = 0; i < 5; i++) {
-            console.log(playRound(playerSelection, getComputerChoice(computerSelection))); //successfully runs 5 rounds with random computer choice each round
-            //console.log();
-        }
-        //Function/variable reports "Winner" if player wins >= 3 rounds
 
-        //Function/variable reports "Loser" if player wins <= 2 rounds
+
+        console.log(game());
+        
     </script>
 </body>
