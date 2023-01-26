@@ -1,76 +1,16 @@
 <!DOCTYPE html>
 <html>
- <head>
-    <meta charset="UTF-8">
-    <title>Rock Paper Scissors</title>
-</head>
-<body>
-    <script>
-        
-        let playerScore = 0;
-        let computerScore = 0;
+    <head>
+        <meta charset="UTF-8">
+        <title>Rock Paper Scissors</title>
+     
+    </head>
+    <body>
+        <button id="btnR">Rock</button>
+        <button id="btnP">Paper</button>
+        <button id="btnS">Scissors</button>
 
-        //defines the array
-        const rockPaperScissors = ['Rock', 'Paper', 'Scissors'];
-        //creates a function that randomly chooses an item from the above array and displays it in the console
-        function getComputerChoice() {
-            return rockPaperScissors[Math.floor(Math.random() * rockPaperScissors.length)];
-        } 
+        <script src ="script.js"></script>
+    </body>
 
-        //Write a function that takes the user input (Rock, Paper, or Scissors) and compares to the randomized computer choice (Rock, Paper, pr Scissors). The results and string output could be as follows:
-
-        function playRound(playerSelection, computerSelection) {
-            let playerSelectionLower = playerSelection.toLowerCase();
-            let computerSelectionLower = computerSelection.toLowerCase();
-            console.log(playerSelection);
-            console.log(computerSelection);
-            if (playerSelectionLower == computerSelectionLower) {
-                return "It's a tie!";
-            } else if (computerSelectionLower == "rock" && playerSelectionLower == "scissors") {
-                return "You lose! Rock beats scissors.";
-            } else if (computerSelectionLower == "rock" && playerSelectionLower == "paper") {
-                return "You win! Paper beats rock.";
-            } else if (computerSelectionLower == "paper" && playerSelectionLower == "rock") {
-                return "You lose! Paper beats rock";
-            } else if (computerSelectionLower == "paper" && playerSelectionLower == "scissors") {
-                return "You win! Scissors beats paper.";
-            } else if (computerSelectionLower == "scissors" && playerSelectionLower == "rock") {
-                return "You win! Rock beats scissors.";
-            } else if (computerSelectionLower == "scissors" && playerSelectionLower == "paper") {
-                return "You lose. Scissors beats paper.";
-            } else {
-                return "Incorrect selection. User must input 'Rock', 'Paper', or 'Scissors'.";
-            }
-        }
-
-        //Create a new function called game() that calls the playRound function
-        function game() {
-            // create loop that plays 5 rounds of playRound and keeps score
-            for (let i = 0; i < 5; i++) {
-                const computerSelection = getComputerChoice();
-                //creates window prompt for each loop iteration for the player to make their choice
-                const playerSelection = prompt("Rock, Paper, or Scissors?");
-                console.log(playRound(playerSelection, computerSelection)); //successfully runs 5 rounds with random computer choice each round
-                //create function or variable that determines score based off of result
-                // log score of each round
-                //add score from previous round to total score
-                // create a function that returns "Winner" if player wins >= 3 rounds or "Loser" if player wins <= 2 rounds
-            }
-            //if else statement to determine points. should go in for loop eventually
-            if (playerSelection === computerSelection) {
-                return 0;
-            } else if ((playerSelection === "rock" && computerSelection === "scissors") || 
-                       (playerSelection === "paper" && computerSelection === "rock") || 
-                       (playerSelection === "scissors" && computerSelection === "paper")) {
-                return 1;
-            } else {
-                return 2;
-            }
-        }
-
-
-
-        console.log(game());
-        
-    </script>
-</body>
+</html>
