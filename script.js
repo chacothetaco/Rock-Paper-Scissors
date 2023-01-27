@@ -4,7 +4,6 @@ let computerScore = 0;
 
 function playRound() {
    const rockPaperScissors = ['rock', 'paper', 'scissors'];
-   //creates a function that randomly returns an item from the above array
    function getComputerChoice() {
        return rockPaperScissors[Math.floor(Math.random() * rockPaperScissors.length)];
    } 
@@ -15,21 +14,28 @@ function playRound() {
     if (playerSelection == computerSelection) {
         return "It's a tie!";
     } else if (computerSelection == "rock" && playerSelection == "scissors") {
-        return "You lose!";
+        //return "You lose!";
+        computerScore++;
     } else if (computerSelection == "rock" && playerSelection == "paper") {
-        return "You win!";
+        //return "You win!";
+        playerScore++;
     } else if (computerSelection == "paper" && playerSelection == "rock") {
-        return "You lose!";
+        //return "You lose!";
+        computerScore++;
     } else if (computerSelection == "paper" && playerSelection == "scissors") {
-        return "You win!";
+        //return "You win!";
+        playerScore++;
     } else if (computerSelection == "scissors" && playerSelection == "rock") {
-        return "You win!";
+        //return "You win!";
+        playerScore++;
     } else if (computerSelection == "scissors" && playerSelection == "paper") {
-        return "You lose!";
+        //return "You lose!";
+        computerScore++;
     } else {
         return "Incorrect selection. User must input 'Rock', 'Paper', or 'Scissors'.";
     }
 
+    updateScore();
 }
 
 //add event listeners for 3 buttons that will call the above playRound function when clicked
@@ -50,11 +56,18 @@ btnScissors.addEventListener('click', () => {
 });
 
 //created div element to display the score
-const resultDiv = document.createElement('div');
-resultDiv.classList.add('result');
-resultDiv.textContent = 'Player Score: ' + playerScore + ' ' + 'Computer Score: ' + computerScore;
-const container = document.querySelector('#container');
-container.appendChild(resultDiv);
+//const resultDiv = document.createElement('div');
+//resultDiv.classList.add('result');
+//resultDiv.textContent = 'Player Score: ' + playerScore + ' ' + 'Computer Score: ' + computerScore;
+
+function updateScore() {
+    let plyrScore = document.getElementById('pScore');
+    let compScore = document.getElementById('cScore');
+    plyrScore.innerHTML = "Player Score: " + playerScore;
+    compScore.innerHTML = "Computer Score: " + computerScore;
+}
+
+//const container = document.querySelector('#container');
 
 //Create a new function called game() that calls the playRound function
  //function game() {
