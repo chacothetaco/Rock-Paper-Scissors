@@ -1,22 +1,15 @@
 let playerScore = 0;
 let computerScore = 0;
 
-//defines the array
-const rockPaperScissors = ['rock', 'paper', 'scissors'];
-//creates a function that randomly chooses an item from the above array and displays it in the console
-function getComputerChoice() {
-    return rockPaperScissors[Math.floor(Math.random() * rockPaperScissors.length)];
-} 
 
-//Write a function that takes the user input (Rock, Paper, or Scissors) and compares to the randomized computer choice (Rock, Paper, pr Scissors). The results and string output could be as follows:
-//let playerSelection = "";
-let computerSelection = getComputerChoice();
-console.log(computerSelection);
-
-// function playRound(playerSelection, computerSelection) {
 function playRound() {
-    //let playerSelection = playerSelection.toCase();
-   // let computerSelection = computerSelection.toCase();
+   const rockPaperScissors = ['rock', 'paper', 'scissors'];
+   //creates a function that randomly returns an item from the above array
+   function getComputerChoice() {
+       return rockPaperScissors[Math.floor(Math.random() * rockPaperScissors.length)];
+   } 
+   let computerSelection = getComputerChoice();
+
     console.log(playerSelection);
     console.log(computerSelection);
     if (playerSelection == computerSelection) {
@@ -36,11 +29,10 @@ function playRound() {
     } else {
         return "Incorrect selection. User must input 'Rock', 'Paper', or 'Scissors'.";
     }
+
 }
 
 //add event listeners for 3 buttons that will call the above playRound function when clicked
-//i need the event listener to give value to playerSelection depending on which button is pressed
-//potential option to create new function that calls playRound function
 const btnRock = document.querySelector('#btnR');
 btnRock.addEventListener('click', () => {
     playerSelection = 'rock';
@@ -56,6 +48,13 @@ btnScissors.addEventListener('click', () => {
     playerSelection = 'scissors';
     playRound();
 });
+
+//created div element to display the score
+const resultDiv = document.createElement('div');
+resultDiv.classList.add('result');
+resultDiv.textContent = 'Player Score: ' + playerScore + ' ' + 'Computer Score: ' + computerScore;
+const container = document.querySelector('#container');
+container.appendChild(resultDiv);
 
 //Create a new function called game() that calls the playRound function
  //function game() {
