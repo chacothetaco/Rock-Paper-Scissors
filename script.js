@@ -38,27 +38,34 @@ function playRound() {
     updateScore();
 }
 
-//add event listeners for 3 buttons that will call the above playRound function when clicked
-const btnRock = document.querySelector('#btnR');
-btnRock.addEventListener('click', () => {
+
+function rockClick() {
     playerSelection = 'rock';
     playRound();
-})
-const btnPaper = document.querySelector('#btnP');
-btnPaper.addEventListener('click', () => {
+    determineWinner();
+}
+
+function paperClick() {
     playerSelection = 'paper';
     playRound();
-});
-const btnScissors = document.querySelector('#btnS');
-btnScissors.addEventListener('click', () => {
+    determineWinner();
+}
+
+function scissorsClick() {
     playerSelection = 'scissors';
     playRound();
-});
+    determineWinner();
+}
 
-//created div element to display the score
-//const resultDiv = document.createElement('div');
-//resultDiv.classList.add('result');
-//resultDiv.textContent = 'Player Score: ' + playerScore + ' ' + 'Computer Score: ' + computerScore;
+//add event listeners for 3 buttons that will call the above playRound function when clicked
+const btnRock = document.querySelector('#btnR');
+btnRock.addEventListener('click', rockClick);
+
+const btnPaper = document.querySelector('#btnP');
+btnPaper.addEventListener('click', paperClick);
+
+const btnScissors = document.querySelector('#btnS');
+btnScissors.addEventListener('click', scissorsClick);
 
 function updateScore() {
     let plyrScore = document.getElementById('pScore');
@@ -67,7 +74,33 @@ function updateScore() {
     compScore.innerHTML = "Computer Score: " + computerScore;
 }
 
-//const container = document.querySelector('#container');
+function determineWinner () {
+    if (playerScore == 5) {
+            let pWin = document.createElement('div');
+            pWin.classList.add('playerWin');
+            pWin.textContent = 'YOU WIN!';
+
+            let container = document.querySelector('#container');
+            container.appendChild(pWin);
+            //remove button functionality once winner determined
+            btnRock.removeEventListener('click', rockClick);
+            btnPaper.removeEventListener('click', paperClick);
+            btnScissors.removeEventListener('click', scissorsClick);
+    } else if (computerScore == 5) {
+            let cWin = document.createElement('div');
+            cWin.classList.add('computerWin');
+            cWin.textContent = 'YOU LOSE!';
+
+            let container = document.querySelector('#container');
+            container.appendChild(cWin);
+            
+            btnRock.removeEventListener('click', rockClick);
+            btnPaper.removeEventListener('click', paperClick);
+            btnScissors.removeEventListener('click', scissorsClick);
+    }
+}
+
+
 
 //Create a new function called game() that calls the playRound function
  //function game() {
