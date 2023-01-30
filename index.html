@@ -2,18 +2,27 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <link rel="stylesheet" href="styles.css">
         <title>Rock Paper Scissors</title>
      
     </head>
     <body>
+        <div id="header1">Rock Paper Scissors</div>
+        <div id="header2">First to 5 wins</div>
         <div class="buttons">
-            <button id="btnR">Rock</button>
-            <button id="btnP">Paper</button>
-            <button id="btnS">Scissors</button>
+            <button id="btnR" class="btn"> <img class="image" src="images/rock.png"> </button>
+            <button id="btnP" class="btn"> <img class="image" src="images/paper.png"> </button>
+            <button id="btnS" class="btn"> <img class="image" src="images/scissors.png"> </button>
         </div>
         <div id="container">
-            <p id="pScore"></p>
-            <p id="cScore"></p>
+            <div id="roundContainer">
+                <p id="compSelection"></p>
+                <p id="roundResult"></p>
+            </div>
+            <div id="scoreContainer">
+                <p id="pScore"></p>
+                <p id="cScore"></p>
+            </div>
         </div>
 
         <script src ="script.js"></script>

@@ -1,0 +1,96 @@
+html {
+    background-image: url(images/blackboard.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+}
+
+#header1 {
+   font-size: 70px;
+   color: white;
+   font-family: chalkduster, fantasy;
+   text-align: center;
+   margin: 20px;
+}
+
+#header2 {
+    font-size: 30px;
+    color: white;
+    font-family: chalkduster, fantasy;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.btn {
+   border: 5px inset white;
+   background-color: rgb(47, 47, 47);
+   color: white;
+   max-width: 300px;
+   margin: 30px;
+}
+
+.btn:active {
+    border: 5px outset white;
+    background-color: rgb(47, 47, 47);
+    color: white;
+    max-width: 300px;
+    margin: 30px;
+ }
+
+.btnClick {
+    border: 5px outset white;
+}
+
+.buttons {
+    text-align: center;
+}
+
+.image {
+    max-width: 150px;
+    max-height: 150px;
+    object-fit: cover;
+    padding-top: 7px;
+    object-position: 15% 15%;
+}
+
+#pScore,
+#cScore {
+    color: white;
+    font-family: chalkduster, fantasy;
+    font-size: 25px;
+    text-align: center;
+}
+
+#compSelection,
+#roundResult {
+    color: white;
+    font-family: chalkduster, fantasy;
+    font-size: 20px;
+    text-align: center;
+}
+
+#roundContainer {
+   padding-bottom : 10px;
+}
+
+#scoreContainer {
+    border: white solid 1px;
+    max-width: 400px;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+.playerWin{
+    color: rgb(117, 158, 117);
+    font-family: chalkduster, fantasy;
+    font-size: 50px;
+    text-align: center;
+}
+
+.computerWin {
+    color: rgb(223, 126, 126);
+    font-family: chalkduster, fantasy;
+    font-size: 50px;
+    text-align: center;
+}
+
