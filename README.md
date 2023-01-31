@@ -1,5 +1,5 @@
 # Rock-Paper-Scissors
-Rock Paper Scissors Project
+Rock Paper Scissors Project using HTML, CSS, and Javascript.
 
 
 background blackboard image: https://cdn.pixabay.com/photo/2015/12/01/15/43/black-1072366_960_720.jpg
